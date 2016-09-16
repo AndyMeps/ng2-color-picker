@@ -1,8 +1,8 @@
 export interface IColorPickerConfiguration {
     width?: number;
-    height: number;
+    height?: number;
     availableColors?: string[];
-    borderRadius: number;
+    borderRadius?: number;
 }
 
 export class ColorPickerConfiguration implements IColorPickerConfiguration {

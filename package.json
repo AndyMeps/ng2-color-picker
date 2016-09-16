@@ -2,7 +2,7 @@
   "name": "ng2-color-picker",
   "version": "0.1.0",
   "description": "Simple color picker for Angular 2",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
     "test": "exit 0",
     "prepublish": "tsc -p tsconfig.json",
