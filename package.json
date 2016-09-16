@@ -24,16 +24,16 @@
   "author": "Andy Mepham",
   "license": "MIT",
   "dependencies": {
-    "@angular/common": "^2.0.0",
-    "@angular/core": "^2.0.0",
-    "@angular/forms": "^2.0.0",
-    "@angular/compiler": "^2.0.0",
-    "ng2-bootstrap": "^1.1.3",
-    "rxjs": "^5.0.0-beta.12",
-    "zone.js": "0.6.23"
+    "@angular/common": "^2.0.0-rc.6",
+    "@angular/core": "^2.0.0-rc.6",
+    "@angular/forms": "^2.0.0-rc.6",
+    "@angular/compiler": "^2.0.0-rc.6",
+    "ng2-bootstrap": "^1.1.1",
+    "rxjs": "^5.0.0-beta.11",
+    "zone.js": "^0.6.17"
   },
   "devDependencies": {
     "tslint": "^3.15.1",
-    "typescript": "2.0.0"
+    "typescript": "^2.0.0"
   }
 }
