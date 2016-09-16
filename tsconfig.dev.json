@@ -1,0 +1,21 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "target": "es6",
+        "moduleResolution": "node",
+        "noImplicitAny": false,
+        "sourceMap": true,
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "declaration": true,
+        "outDir": "demo/node_modules/ng2-color-picker",
+        "removeComments": true
+    },
+    "files": [
+        "index.ts"
+    ],
+    "exclude": [
+        "demo",
+        "node_modules"
+    ]
+}
