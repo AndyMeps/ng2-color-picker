@@ -30,4 +30,8 @@ export class AppComponent {
       ]
     };
   }
+
+  public change(val: any) {
+    console.log(val);
+  }
 }

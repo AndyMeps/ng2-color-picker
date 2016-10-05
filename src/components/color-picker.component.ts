@@ -39,14 +39,15 @@ import { IColorPickerConfiguration, ColorPickerConfiguration } from '../models';
 })
 export class ColorPickerComponent implements ControlValueAccessor, OnInit {
 
-    @Input('picker-config') opts: IColorPickerConfiguration;
-
     public cd: NgModel;
 
     public onChange: any = Function.prototype;
+
     public onTouched: any = Function.prototype;
 
     public config: ColorPickerConfiguration;
+
+    @Input() pickerConfig: IColorPickerConfiguration;
 
     constructor(@Self() cd: NgModel) {
         this.cd = cd;
@@ -72,32 +73,39 @@ export class ColorPickerComponent implements ControlValueAccessor, OnInit {
     }
 
     public setColor(color: string) {
-        this.cd.viewToModelUpdate(color);
+        this._updateModel(color);
     }
 
     private _processOptions() {
-        if (this.opts != null) {
+        let opts = this.pickerConfig;
+
+        if (opts != null) {
 
             // availableColors
-            if (this.opts.availableColors) {
-                this.config.availableColors = this.opts.availableColors;
+            if (opts.availableColors) {
+                this.config.availableColors = opts.availableColors;
             }
 
             // width
-            if (this.opts.width) {
-                this.config.width = this.opts.width;
+            if (opts.width) {
+                this.config.width = opts.width;
             }
 
             // height
-            if (this.opts.height) {
-                this.config.height = this.opts.height;
+            if (opts.height) {
+                this.config.height = opts.height;
             }
 
             // borderRadius
-            if (this.opts.borderRadius) {
-                this.config.borderRadius = this.opts.borderRadius;
+            if (opts.borderRadius) {
+                this.config.borderRadius = opts.borderRadius;
             }
         }
     }
 
+    private _updateModel(color: string) {
+        this.cd.viewModel = color;
+        this.onChange(color);
+        this.onTouched();
+    }
 }
