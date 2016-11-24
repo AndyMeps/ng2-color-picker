@@ -1,9 +1,10 @@
-export interface IColorPickerConfiguration {
-    width?: number;
-    height?: number;
-    availableColors?: string[];
-    borderRadius?: number;
-}
+import { IColorPickerConfiguration } from '../interfaces';
+
+export const DEFAULT_COLORS = [
+    '#ff0000',
+    '#00ff00',
+    '#0000ff'
+];
 
 export class ColorPickerConfiguration implements IColorPickerConfiguration {
     public width: number;
@@ -18,9 +19,3 @@ export class ColorPickerConfiguration implements IColorPickerConfiguration {
         this.availableColors = DEFAULT_COLORS;
     }
 }
-
-export const DEFAULT_COLORS = [
-    '#ff0000',
-    '#00ff00',
-    '#0000ff'
-];

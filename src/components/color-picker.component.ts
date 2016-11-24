@@ -56,56 +56,69 @@ export class ColorPickerComponent implements ControlValueAccessor, OnInit {
         this.config = new ColorPickerConfiguration();
     }
 
+    /** OnInit implementation. */
     ngOnInit() {
-        this._processOptions();
+        this._processOptions(this.pickerConfig);
     }
 
-    public writeValue(value: any): void {
+    /** ControlValueAccessor implementation. */
+    writeValue(value: any): void { }
 
-    }
-
-    public registerOnChange(fn: (_: any) => {}): void {
+    /** ControlValueAccessor implementation. */
+    registerOnChange(fn: (_: any) => {}): void {
         this.onChange = fn;
     }
 
-    public registerOnTouched(fn: (_: any) => {}): void {
+    /** ControlValueAccessor implementation. */
+    registerOnTouched(fn: (_: any) => {}): void {
         this.onTouched = fn;
     }
 
+    /**
+     * Update the current color based on selection.
+     *
+     * @param {string} color
+     *
+     * @memberOf ColorPickerComponent
+      */
     public setColor(color: string) {
-        this._updateModel(color);
+        this.cd.viewToModelUpdate(color);
+        this.onTouched();
     }
 
-    private _processOptions() {
-        let opts = this.pickerConfig;
-
+    /**
+     * Wire up configuration.
+     *
+     * @private
+     * @param {IColorPickerConfiguration} opts
+     *
+     * @memberOf ColorPickerComponent
+     */
+    private _processOptions(opts: IColorPickerConfiguration) {
         if (opts != null) {
 
+            const IsNumber = (val: any) => typeof(val) === 'number';
+            const IsArray = (val: any) => Array.isArray(val);
+
             // availableColors
-            if (opts.availableColors) {
+            if (IsArray(opts.availableColors)) {
                 this.config.availableColors = opts.availableColors;
             }
 
             // width
-            if (opts.width) {
+            if (IsNumber(opts.width)) {
                 this.config.width = opts.width;
             }
 
             // height
-            if (opts.height) {
+            if (IsNumber(opts.height)) {
                 this.config.height = opts.height;
             }
 
             // borderRadius
-            if (opts.borderRadius) {
+            if (IsNumber(opts.borderRadius)) {
                 this.config.borderRadius = opts.borderRadius;
             }
         }
-    }
-
-    private _updateModel(color: string) {
-        this.cd.viewModel = color;
-        this.onChange(color);
-        this.onTouched();
     }
 }
