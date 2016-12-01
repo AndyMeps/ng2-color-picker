@@ -1,7 +1,8 @@
 import { Component, Input, Output, EventEmitter, OnInit, Self } from '@angular/core';
 import { NgModel, ControlValueAccessor } from '@angular/forms';
 
-import { IColorPickerConfiguration, ColorPickerConfiguration } from '../models';
+import { ColorPickerConfiguration } from '../models';
+import { IColorPickerConfiguration } from '../interfaces';
 
 @Component({
     selector: `color-picker[ngModel]`,
