@@ -9,7 +9,7 @@ import { ColorPickerComponent } from './components';
     imports: [
         CommonModule,
         FormsModule,
-        DropdownModule
+        DropdownModule.forRoot()
     ],
     declarations: [
         ColorPickerComponent
