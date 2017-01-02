@@ -1,3 +1,14 @@
+<a name="1.1.0"></a>
+# [1.1.0](https://github.com/andymeps/ng2-color-picker/compare/v1.0.0...v1.1.0) (2017-01-02)
+
+### Bug Fixes
+
+* Fixed #2 with a move to the latest version of angular 2 and ng2-bootstrap
+
+### Notes
+
+* This version now supports the latest version of angular 2 and ng2-bootstrap.
+
 <a name="1.0.0"></a>
 # [1.0.0](https://github.com/andymeps/ng2-color-picker/compare/v0.2.0...v1.0.0) (2016-12-02)
 
