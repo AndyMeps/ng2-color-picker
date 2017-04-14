@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { DropdownModule } from 'ng2-bootstrap';
+import { BsDropdownModule } from 'ng2-bootstrap';
 
 import { ColorPickerComponent } from './components';
 
@@ -9,7 +9,7 @@ import { ColorPickerComponent } from './components';
     imports: [
         CommonModule,
         FormsModule,
-        DropdownModule.forRoot()
+        BsDropdownModule.forRoot()
     ],
     declarations: [
         ColorPickerComponent
@@ -18,4 +18,10 @@ import { ColorPickerComponent } from './components';
         ColorPickerComponent
     ]
 })
-export class ColorPickerModule { }
+export class ColorPickerModule {
+    public static forRoot(options: any = {}, module: string = 'default') {
+        return {
+            ngModule: ColorPickerModule
+        }
+    }
+ }

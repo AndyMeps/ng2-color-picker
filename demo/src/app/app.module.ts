@@ -16,7 +16,7 @@ import { ColorPickerModule } from 'ng2-color-picker';
     BrowserModule,
     FormsModule,
     HttpModule,
-    ColorPickerModule
+    ColorPickerModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
