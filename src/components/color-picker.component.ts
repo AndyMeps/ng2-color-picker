@@ -8,19 +8,32 @@ import { IColorPickerConfiguration } from '../interfaces';
     selector: `color-picker[ngModel]`,
     template: `
         <div class="color-picker-container" dropdown>
-            <span class="current-color" [style.width]="config.width + 'px'" [style.height]="config.height + 'px'"
-                [style.border-radius]="config.borderRadius + 'px'" [style.background-color]="cd.viewModel" dropdownToggle>
+            <span class="current-color dropdown-toggle" 
+                [style.width]="config.width + 'px'" 
+                [style.height]="config.height + 'px'"
+                [style.border-radius]="config.borderRadius + 'px'" 
+                [style.background-color]="cd.viewModel" 
+                dropdownToggle>
             </span>
-            <ul dropdownMenu class="color-picker-dropdown">
-                <li class="color-picker-color" *ngFor="let color of config.availableColors" [style.width]="config.width + 'px'" [style.height]="config.height + 'px'"
-                    [style.border-radius]="config.borderRadius + 'px'" [style.background-color]="color" (click)="setColor(color)" [title]="color">
+            <ul class="dropdown-menu color-picker-dropdown" 
+                role="menu" 
+                *dropdownMenu>
+                <li class="color-picker-color" 
+                    *ngFor="let color of config.availableColors" 
+                    [style.width]="config.width + 'px'" 
+                    [style.height]="config.height + 'px'"
+                    [style.border-radius]="config.borderRadius + 'px'" 
+                    [style.background-color]="color" 
+                    (click)="setColor(color)" 
+                    [title]="color">
                 </li>
             </ul>
         </div>
     `,
     styles: [
         `.color-picker-container {
-            display: inline-block; }`,
+            display: inline-block; 
+            position: relative; }`,
 
         `.current-color {
             display: inline-block;

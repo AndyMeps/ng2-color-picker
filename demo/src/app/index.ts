@@ -1,2 +1,2 @@
-export * from './app.component';
-export * from './app.module';
+export { AppComponent } from './app.component';
+export { AppModule } from './app.module';

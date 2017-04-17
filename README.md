@@ -62,13 +62,13 @@ It is possible to configure `ng2-color-picker` by providing a configuration obje
 `ng2-color-picker` exposes an interface to provide an indication of valid configuration properties, this can be referenced as a type for your configuration object by importing it:
 
 ```typescript
-import { IPickerConfiguration } from 'ng2-color-picker';
+import { IColorPickerConfiguration } from 'ng2-color-picker';
 ```
 
 Which can then be used as the configuration object type in your component:
 
 ```typescript
-public pickerOptions: IPickerConfiguration;
+public pickerOptions: IColorPickerConfiguration;
 ```
 
 Current list of configuration options, types and default values:

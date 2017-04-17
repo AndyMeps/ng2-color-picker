@@ -1,12 +1,20 @@
 {
     "compilerOptions": {
-        "module": "commonjs",
+        "module": "es2015",
         "target": "es5",
         "moduleResolution": "node",
         "noImplicitAny": false,
         "sourceMap": true,
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
+        "mapRoot": "",
+        "skipLibCheck": true,
+        "baseUrl": "",
+        "lib": [
+            "es6",
+            "es2015",
+            "dom"
+        ],
         "declaration": true,
         "outDir": "demo/node_modules/ng2-color-picker",
         "removeComments": true
@@ -17,6 +25,13 @@
     ],
     "exclude": [
         "demo",
-        "node_modules"
-    ]
+        "node_modules",
+        "**/*.spec.ts",
+        ".vendor.ts",
+        ".polyfills.ts"
+    ],
+    "angularCompilerOptions": {
+        "skipTemplateCodegen": true,
+        "debug": true
+    }
 }

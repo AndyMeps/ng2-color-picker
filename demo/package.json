@@ -9,7 +9,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "tsc:lib": "tsc -p ../tsconfig.dev.json"
+    "tsc:lib": "ngc -p ../tsconfig.dev.json"
   },
   "private": true,
   "dependencies": {
