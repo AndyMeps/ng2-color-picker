@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { BsDropdownModule } from 'ng2-bootstrap';
+import { BsDropdownModule } from 'ngx-bootstrap';
 
 import { ColorPickerComponent } from './components';
 
