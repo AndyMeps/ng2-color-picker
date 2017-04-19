@@ -1,1 +1,1 @@
-export * from './color-picker.component';
+export { ColorPickerComponent } from './color-picker.component';

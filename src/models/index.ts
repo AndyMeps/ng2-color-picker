@@ -1,1 +1,1 @@
-export * from './color-picker-config.model';
+export { ColorPickerConfiguration } from './color-picker-config.model';

@@ -1,1 +1,1 @@
-export * from './color-picker-config.interface';
+export { IColorPickerConfiguration } from './color-picker-config.interface';

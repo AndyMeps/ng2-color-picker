@@ -1,7 +1,7 @@
 import { Component, Input, Output, EventEmitter, OnInit, Self } from '@angular/core';
 import { NgModel, ControlValueAccessor } from '@angular/forms';
 
-import { ColorPickerConfiguration, DEFAULT_COLORS } from '../models';
+import { ColorPickerConfiguration } from '../models';
 import { IColorPickerConfiguration } from '../interfaces';
 
 @Component({
@@ -19,7 +19,7 @@ import { IColorPickerConfiguration } from '../interfaces';
                 role="menu" 
                 *dropdownMenu>
                 <li class="color-picker-color" 
-                    *ngFor="let color of availableColors || config.availableColors" 
+                    *ngFor="let color of availableColors" 
                     [style.width]="config.width + 'px'" 
                     [style.height]="config.height + 'px'"
                     [style.border-radius]="config.borderRadius + 'px'" 
@@ -115,12 +115,6 @@ export class ColorPickerComponent implements ControlValueAccessor, OnInit {
 
             const IsNumber = (val: any) => typeof(val) === 'number';
             const IsArray = (val: any) => Array.isArray(val);
-
-            // availableColors
-            if (IsArray(opts.availableColors)) {
-                console.warn('[ng2-color-picker] availableColors is deprecated, use component property instead.');
-                this.config.availableColors = opts.availableColors;
-            }
 
             // width
             if (IsNumber(opts.width)) {
