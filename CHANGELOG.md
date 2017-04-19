@@ -1,3 +1,10 @@
+<a name="1.2.2"></a>
+# [1.2.2](https://github.com/andymeps/ng2-color-picker/compare/v1.2.1...v1.2.2) (2017-04-19)
+
+### Bug Fixes
+
+Removed default assignment of `availableColors` to avoid change in behaviour from previous revs.
+
 <a name="1.2.1"></a>
 # [1.2.1](https://github.com/andymeps/ng2-color-picker/compare/v1.2.0...v1.2.1) (2017-04-19)
 

@@ -139,8 +139,7 @@ export class ColorPickerComponent implements ControlValueAccessor, OnInit {
         }
 
         if (this.availableColors == null) {
-            console.warn('[ng2-color-picker] No available colors provided, falling back to Red, Green, Blue.');
-            this.availableColors = DEFAULT_COLORS;
+            console.warn('[ng2-color-picker] No available colors provided.');
         }
     }
 }
