@@ -12,7 +12,6 @@ Thumbs.db
 
 # Custom Directories
 demo
-src
 assets
 .travis.yml
 tsconfig.dev.json
