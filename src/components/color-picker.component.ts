@@ -1,7 +1,7 @@
 import { Component, Input, Output, EventEmitter, OnInit, Self } from '@angular/core';
 import { NgModel, ControlValueAccessor } from '@angular/forms';
 
-import { ColorPickerConfiguration } from '../models';
+import { ColorPickerConfiguration, DEFAULT_COLORS } from '../models';
 import { IColorPickerConfiguration } from '../interfaces';
 
 @Component({
@@ -19,7 +19,7 @@ import { IColorPickerConfiguration } from '../interfaces';
                 role="menu" 
                 *dropdownMenu>
                 <li class="color-picker-color" 
-                    *ngFor="let color of config.availableColors" 
+                    *ngFor="let color of availableColors || config.availableColors" 
                     [style.width]="config.width + 'px'" 
                     [style.height]="config.height + 'px'"
                     [style.border-radius]="config.borderRadius + 'px'" 
@@ -62,6 +62,8 @@ export class ColorPickerComponent implements ControlValueAccessor, OnInit {
     public config: ColorPickerConfiguration;
 
     @Input() pickerConfig: IColorPickerConfiguration;
+
+    @Input() availableColors: string[];
 
     constructor(@Self() cd: NgModel) {
         this.cd = cd;
@@ -116,6 +118,7 @@ export class ColorPickerComponent implements ControlValueAccessor, OnInit {
 
             // availableColors
             if (IsArray(opts.availableColors)) {
+                console.warn('[ng2-color-picker] availableColors is deprecated, use component property instead.');
                 this.config.availableColors = opts.availableColors;
             }
 
@@ -133,6 +136,11 @@ export class ColorPickerComponent implements ControlValueAccessor, OnInit {
             if (IsNumber(opts.borderRadius)) {
                 this.config.borderRadius = opts.borderRadius;
             }
+        }
+
+        if (this.availableColors == null) {
+            console.warn('[ng2-color-picker] No available colors provided, falling back to Red, Green, Blue.');
+            this.availableColors = DEFAULT_COLORS;
         }
     }
 }

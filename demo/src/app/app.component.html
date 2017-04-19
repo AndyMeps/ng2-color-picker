@@ -1,3 +1,11 @@
 <div style="padding: 5rem">
-    <color-picker [(ngModel)]="model" [pickerConfig]="config" (ngModelChange)="change($event)"></color-picker>
+    <button (click)="addColor()">Add Color</button>
+    <color-picker 
+        [(ngModel)]="model" 
+        [availableColors]="availableColors"
+        [pickerConfig]="config" 
+        (ngModelChange)="change($event)">
+    </color-picker>
 </div>
+
+<!--   -->

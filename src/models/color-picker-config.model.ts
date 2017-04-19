@@ -9,7 +9,6 @@ export const DEFAULT_COLORS = [
 export class ColorPickerConfiguration implements IColorPickerConfiguration {
     public width: number;
     public height: number;
-    public availableColors: string[];
     public borderRadius: number;
 
     constructor() {
@@ -18,4 +17,10 @@ export class ColorPickerConfiguration implements IColorPickerConfiguration {
         this.borderRadius = 4;
         this.availableColors = DEFAULT_COLORS;
     }
+
+    /**
+     * Deprecated in v1.2.1
+     * @deprecated in v1.2.1
+     */
+    public availableColors: string[];
 }

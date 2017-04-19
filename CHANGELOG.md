@@ -1,3 +1,10 @@
+<a name="1.2.1"></a>
+# [1.2.1](https://github.com/andymeps/ng2-color-picker/compare/v1.2.0...v1.2.1) (2017-04-19)
+
+### Enhancements
+
+Implemented change for #4 - `availableColors` has been deprecated from `IColorPickerConfiguration`, use as `[availableColors]` on the component instead; this allows colors to be added and removed from the parent component. Will be removed entirely in next minor revision.
+
 <a name="1.2.0"></a>
 # [1.2.0](https://github.com/andymeps/ng2-color-picker/compare/v1.1.0...v.1.2.0) (2017-04-17)
 

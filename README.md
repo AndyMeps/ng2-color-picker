@@ -40,11 +40,12 @@ Finally, include the component in your HTML as per the next section.
 ## HTML Component Markup
 
 Once the module is installed, you will need to add HTML markup to include the picker in a component.
-The minimum requirement is an [(ngModel)] attribute, which should provide a string representation of a color.
+The minimum requirement is an `[(ngModel)]` attribute, which should provide a string representation of a color, and an `[availableColors]` attribute, which should provide a `string[]` of available colors.
 
 ```html
 <color-picker
-    [(ngModel)]="color">
+    [(ngModel)]="color"
+    [availableColors]="availableColors">
 </color-picker>
 ```
 
@@ -53,6 +54,7 @@ It is possible to configure `ng2-color-picker` by providing a configuration obje
 ```html
 <color-picker
     [(ngModel)]="color"
+    [availableColors]="availableColors"
     [pickerConfig]="pickerOptions">
 </color-picker>
 ```
@@ -78,4 +80,3 @@ Current list of configuration options, types and default values:
 | width | `number` | 25 | Width of the picker control. |
 | height | `number` | 25 | Height of the picker control. |
 | borderRadius | `number` | 4 | Radius of the picker control border. |
-| availableColors | `string[]` | `['#f00', '#0f0', '#00f']` | Default list of colors available from the dropdown menu. |
