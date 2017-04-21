@@ -10,7 +10,11 @@ Simple color picker for Angular 2
 
 ## Dependencies
 
-The module relies on `ngx-bootstrap` for dropdown functionality.
+The module relies on `ngx-bootstrap` for dropdown functionality, currently the library requires bootstrap 3 or 4 CSS as part of your app:
+
+```html
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+```
 
 ## Installation
 
